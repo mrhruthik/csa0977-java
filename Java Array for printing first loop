@@ -1,0 +1,29 @@
+public class ArrayMatrixDemo {
+    public static void main(String[] args) {
+        int[] matrixA = new int[9];
+        int[] matrixB = new int[9];
+
+        for (int i = 0; i < 9; i++) {
+            matrixA[i] = i + 1;
+        }
+
+       
+        for (int i = 0; i < 9; i++) {
+            matrixB[i] = 9 - i;
+        }
+
+        
+        System.out.println("Matrix A:");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(matrixA[i] + " ");
+        }
+        System.out.println();
+
+      
+        System.out.println("Matrix B:");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(matrixB[i] + " ");
+        }
+        System.out.println();
+    }
+}
