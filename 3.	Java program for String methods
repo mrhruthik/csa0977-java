@@ -1,0 +1,34 @@
+public class StringDemo {
+    public static void main(String[] args) {
+      
+        String str1 = new String(); 
+        String str2 = new String("Hello"); 
+        char[] charArray = { 'J', 'a', 'v', 'a' };
+        String str3 = new String(charArray); 
+
+        System.out.println("String Constructors:");
+        System.out.println("Empty: \"" + str1 + "\"");
+        System.out.println("From literal: \"" + str2 + "\"");
+        System.out.println("From char array: \"" + str3 + "\"");
+
+       
+        String sample = "Hello, World!";
+        System.out.println("\nString Methods:");
+        System.out.println("Length: " + sample.length());
+        System.out.println("Char at index 1: " + sample.charAt(1));
+        System.out.println("Substring (0, 5): " + sample.substring(0, 5));
+        System.out.println("Contains 'World': " + sample.contains("World"));
+        System.out.println("Starts with 'Hello': " + sample.startsWith("Hello"));
+        System.out.println("Ends with '!': " + sample.endsWith("!"));
+        System.out.println("To upper case: " + sample.toUpperCase());
+        System.out.println("To lower case: " + sample.toLowerCase());
+
+      
+        String concatStr = sample + " Welcome to Java.";
+        System.out.println("Concatenated: " + concatStr);
+
+     
+        int number = 100;
+        System.out.println("String value of int: " + String.valueOf(number));
+    }
+}
