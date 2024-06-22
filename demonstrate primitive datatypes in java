@@ -1,0 +1,29 @@
+public class PrimitiveDataTypesDemo {
+    public static void main(String[] args) {
+        // Integer data types
+        byte byteValue = 127; // Maximum value for byte
+        short shortValue = 32767; // Maximum value for short
+        int intValue = 2147483647; // Maximum value for int
+        long longValue = 9223372036854775807L; // Maximum value for long
+
+        // Floating-point data types
+        float floatValue = 3.14F; // Float value with 'F' at the end
+        double doubleValue = 3.141592653589793; // Double value
+
+        // Character data type
+        char charValue = 'A'; // Character value
+
+        // Boolean data type
+        boolean booleanValue = true; // Boolean value
+
+        // Printing the values
+        System.out.println("Byte Value: " + byteValue);
+        System.out.println("Short Value: " + shortValue);
+        System.out.println("Int Value: " + intValue);
+        System.out.println("Long Value: " + longValue);
+        System.out.println("Float Value: " + floatValue);
+        System.out.println("Double Value: " + doubleValue);
+        System.out.println("Char Value: " + charValue);
+        System.out.println("Boolean Value: " + booleanValue);
+    }
+}
