@@ -1,0 +1,24 @@
+public class StringBuilderVsStringBuffer {
+    public static void main(String[] args) {
+        int iterations = 100000;
+        long startTime, endTime;
+
+       
+        startTime = System.currentTimeMillis();
+        StringBuilder sbBuilder = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            sbBuilder.append("test");
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("StringBuilder time: " + (endTime - startTime) + " ms");
+
+       
+        startTime = System.currentTimeMillis();
+        StringBuffer sbBuffer = new StringBuffer();
+        for (int i = 0; i < iterations; i++) {
+            sbBuffer.append("test");
+        }
+        endTime = System.currentTimeMillis();
+        System.out.println("StringBuffer time: " + (endTime - startTime) + " ms");
+    }
+}
