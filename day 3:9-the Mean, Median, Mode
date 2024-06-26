@@ -1,0 +1,69 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class StatisticsCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: array of elements
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        double[] elements = new double[n];
+
+        System.out.print("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            elements[i] = scanner.nextDouble();
+        }
+
+        // Calculate mean
+        double mean = calculateMean(elements);
+        // Calculate median
+        double median = calculateMedian(elements);
+        // Calculate mode
+        double mode = calculateMode(elements);
+
+        // Print results
+        System.out.println("Mean = " + mean);
+        System.out.println("Median = " + median);
+        System.out.println("Mode = " + mode);
+
+        scanner.close();
+    }
+
+    private static double calculateMean(double[] array) {
+        double sum = 0;
+        for (double num : array) {
+            sum += num;
+        }
+        return sum / array.length;
+    }
+
+    private static double calculateMedian(double[] array) {
+        Arrays.sort(array);
+        int length = array.length;
+        if (length % 2 == 0) {
+            return (array[length / 2 - 1] + array[length / 2]) / 2.0;
+        } else {
+            return array[length / 2];
+        }
+    }
+
+    private static double calculateMode(double[] array) {
+        Map<Double, Integer> frequencyMap = new HashMap<>();
+        for (double num : array) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        double mode = array[0];
+        int maxCount = 0;
+        for (Map.Entry<Double, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mode = entry.getKey();
+            }
+        }
+        return mode;
+    }
+}
