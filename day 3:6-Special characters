@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class SpecialCharacterCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: a line of text from the user
+        System.out.print("Enter a line of text: ");
+        String input = scanner.nextLine();
+
+        // Variables to store special characters and their count
+        StringBuilder specialCharacters = new StringBuilder();
+        int specialCharacterCount = 0;
+
+        // Iterate through each character in the input line
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            // Check if the character is a special character
+            if (!Character.isLetterOrDigit(ch)) {
+                specialCharacters.append(ch).append(" ");
+                specialCharacterCount++;
+            }
+        }
+
+        // Print the special characters and their count
+        System.out.println("Special characters: " + specialCharacters.toString().trim());
+        System.out.println("Number of special characters: " + specialCharacterCount);
+
+        scanner.close();
+    }
+}
